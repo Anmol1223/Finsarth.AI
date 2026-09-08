@@ -37,16 +37,16 @@ Stores bank accounts and credit cards connected by a user.
 - created_at
 ### Examples
 Account Name:
-HDFC Savings Account
+HDFC Savings Account,
 Account Type:
-Savings
+Savings,
 Provider:
 HDFC Bank
 ---
 Account Name:
-ICICI Credit Card
+ICICI Credit Card,
 Account Type:
-Credit Card
+Credit Card,
 Provider:
 ICICI Bank
 ---
