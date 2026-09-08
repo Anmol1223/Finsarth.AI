@@ -54,10 +54,11 @@ Application runs successfully.
 ---
 ## Stage 3 - Authentication
 Status:
-⬜ Pending
+🟡 In Progress
 Tasks:
-- Signup Page
-- Login Page
+- ✅ Signup Page UI Created
+  
+- ✅ Login Page UI Created
 - Logout Functionality
 Success Criteria:
 Users can create accounts and log in.
