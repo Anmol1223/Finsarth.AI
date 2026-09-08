@@ -56,10 +56,10 @@ Application runs successfully.
 Status:
 🟡 In Progress
 Tasks:
-- ✅ Signup Page UI Created
-  
+- ✅ Signup Page UI Created 
 - ✅ Login Page UI Created
-- Logout Functionality
+- ⬜ Supabase Authentication
+- ⬜ Logout Functionality
 Success Criteria:
 Users can create accounts and log in.
 ---
@@ -95,11 +95,12 @@ Transactions are categorized accurately.
 ---
 ## Stage 7 - Dashboard
 Status:
-⬜ Pending
+🟡 In Progress
 Tasks:
-- KPI Cards
-- Spending Charts
-- Category Analysis
+- ✅ Dashboard UI Created
+- ⬜ Real KPI Data
+- ⬜ Spending Charts
+- ⬜ Category Analysis
 Success Criteria:
 Users understand spending patterns quickly.
 ---
