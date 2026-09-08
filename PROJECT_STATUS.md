@@ -40,10 +40,10 @@ Status:
 # Upcoming Stages
 ## Stage 2 - Project Setup
 Status:
-⬜ Pending
+🟡 In Progress
 Tasks:
-- Install Node.js
-- Setup Next.js
+- ✅ Node.js Installed
+- ✅ npm Verified
 - Setup Tailwind CSS
 - Setup Supabase
 - Setup Vercel
