@@ -14,11 +14,11 @@ Status:
 In Progress
 ---
 # Overall Progress
-Documentation: ✅ Completed,
-Design Planning: ✅ Completed,
-Development: 🟡 In Progress,
-Testing: ⬜ Not Started,
-Deployment: ⬜ Not Started,
+- Documentation: ✅ Completed,
+- Design Planning: ✅ Completed,
+- Development: 🟡 In Progress,
+- Testing: ⬜ Not Started,
+- Deployment: ⬜ Not Started,
 ---
 # Completed Tasks
 ## Project Foundation
