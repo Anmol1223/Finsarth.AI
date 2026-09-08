@@ -16,7 +16,7 @@ In Progress
 # Overall Progress
 Documentation: ✅ Completed,
 Design Planning: ✅ Completed,
-Development: ⬜ Not Started,
+Development: 🟡 In Progress,
 Testing: ⬜ Not Started,
 Deployment: ⬜ Not Started,
 ---
@@ -40,14 +40,15 @@ Status:
 # Upcoming Stages
 ## Stage 2 - Project Setup
 Status:
-🟡 In Progress
+✅ Completed
 Tasks:
 - ✅ Node.js Installed
 - ✅ npm Verified
-- Setup Tailwind CSS
+- ✅ Next.js Created
+- ✅ Tailwind CSS Configured
 - Setup Supabase
 - Setup Vercel
-- Run Project Locally
+- ✅ Run Project Locally
 Success Criteria:
 Application runs successfully.
 ---
