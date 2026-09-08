@@ -9,21 +9,77 @@ The objective is to provide transaction intelligence powered by AI.
 Signup → Login → Connect Account or Upload Statement → Import Transactions → Categorize Spending → View Dashboard → Receive AI Insights
 ## Included Features
 ### Authentication
-Write details here.
+Users can:
+
+Create account
+Login
+Logout
+
+**###Fields**
+
+Name
+Email
+Password
 ### Accounts
-Write details here.
+Users can:
+
+- Add Bank Account
+- Add Credit Card
+- Add Account Manually
+
 ### Transaction Import
-Write details here.
+Users can:
+
+- Upload CSV files
+- Upload Bank Statements
+- Add Transactions Manually
+
+### Transaction Fields
+- Date
+- Merchant
+- Amount
+- Category
+- Account
+
+### Account Types
+Savings Account
+Current Account
+Credit Card 
 ### Dashboard
-Write details here.
+The dashboard will display:
+
+- Total Spending
+- Total Transactions
+- Top Spending Category
+- Monthly Spending Trend
+- Spending Breakdown
+- 
 ### AI Insights
-Write details here.
----
+AI will generate:
+
+**- Spending Summary
+- Savings Opportunities
+- Subscription Analysis
+- Unusual Spending Detection
+**---
 ## Success Criteria
-Write success criteria here.
+Phase 1 is complete when:
+
+- User can register
+- User can login
+- User can add accounts
+- User can upload transactions
+- Transactions can be categorized
+- Dashboard displays spending data
+- AI generates spending insights
 ---
 ## Excluded Features
-6
- 
-47
-Write excluded features here.
+The following are NOT included in Phase 1:
+
+- Mutual Funds
+- Stock Market Investing
+- Retirement Planning
+- Insurance Marketplace
+- Tax Planning
+- Loan Marketplace
+- Wealth Management
