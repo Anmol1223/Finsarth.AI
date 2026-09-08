@@ -51,7 +51,7 @@ Tasks:
 - ✅ Supabase Package Installed
 - ✅ Supabase Client Created
 - ✅ Next.js Running
-- Setup Vercel
+- ⬜ Setup Vercel
 - ✅ Run Project Locally
 Success Criteria:
 Application runs successfully.
