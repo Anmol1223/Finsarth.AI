@@ -58,11 +58,11 @@ Application runs successfully.
 ---
 ## Stage 3 - Authentication
 Status:
-🟡 In Progress
+✅ Completed
 Tasks:
 - ✅ Signup Page UI Created 
 - ✅ Login Page UI Created
-- ⬜ Supabase Authentication
+- ✅ User Authentication
 - ⬜ Logout Functionality
 Success Criteria:
 Users can create accounts and log in.
