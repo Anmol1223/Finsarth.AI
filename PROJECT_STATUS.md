@@ -110,7 +110,7 @@ Status:
 🟡 In Progress
 Tasks:
 - ✅ Dashboard UI Created
-- ⬜ Real KPI Data
+- ✅ Real KPI Data
 - ⬜ Spending Charts
 - ⬜ Category Analysis
 Success Criteria:
