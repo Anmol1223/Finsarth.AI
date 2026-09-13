@@ -122,12 +122,13 @@ Users understand spending patterns quickly.
 ---
 ## Stage 8 - AI Insights
 Status:
-⬜ Pending
+🟡 In Progress
 Tasks:
-- Spending Summary
+- ✅ Spending Summary
 - Savings Recommendations
 - Subscription Analysis
 - Trend Analysis
+  
 Success Criteria:
 Users receive actionable insights.
 ---
