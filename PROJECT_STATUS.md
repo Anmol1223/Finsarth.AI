@@ -151,14 +151,14 @@ Success Criteria:
 Public MVP is live.
 ---
 # Current Priority
-PDF Statement Extraction
-Multi-Bank Detection Engine
-PDF Transaction Storage
-Manual Transaction Entry
-Subscription Analysis
-Trend Analysis
-Connect finsarth.com
-Premium Homepage Redesign
+- PDF Statement Extraction
+- Multi-Bank Detection Engine
+- PDF Transaction Storage
+- Manual Transaction Entry
+- Subscription Analysis
+- Trend Analysis
+- Connect finsarth.com
+- Premium Homepage Redesign
 
 Stage 2 - Project Setup
 ---
