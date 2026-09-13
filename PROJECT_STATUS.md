@@ -80,19 +80,27 @@ Success Criteria:
 Users can manage financial accounts.
 ---
 ## Stage 5 - Transaction Engine
+
 Status:
 🟡 In Progress
+
 Tasks:
-- ✅ Transactions Table/Columns Created
+- ✅ Transactions Table Created
+- ✅ Transaction Columns Added
 - ✅ CSV Upload UI Created
 - ✅ CSV File Reading Working
 - ✅ CSV Preview Working
 - ✅ CSV Parsing
+- ✅ Transaction Storage
 - ✅ Transactions View
-- ✅Transaction Storage
+- ✅ Bank Statement Data Model Ready
+- 🟡 PDF Statement Upload UI Created
+- 🟡 Multi-Bank PDF Engine Started
+- ⬜ PDF Statement Extraction
+- ⬜ PDF Transaction Storage
 - ⬜ Statement Upload
 - ⬜ Manual Transaction Entry
-
+  
 Success Criteria:
 Transactions are stored correctly.
 ---
@@ -114,7 +122,7 @@ Tasks:
 - ✅ Dashboard UI Created
 - ✅ Real KPI Data
 - ✅ Top Category KPI
-- ⬜ Spending Charts
+- ✅ Spending Charts
 - ✅ Category Analysis
    
 Success Criteria:
@@ -126,8 +134,8 @@ Status:
 Tasks:
 - ✅ Spending Summary
 - ✅ Savings Recommendations
-- Subscription Analysis
-- Trend Analysis
+- ⬜ Subscription Analysis
+- ⬜ Trend Analysis
   
 Success Criteria:
 Users receive actionable insights.
@@ -143,6 +151,15 @@ Success Criteria:
 Public MVP is live.
 ---
 # Current Priority
+PDF Statement Extraction
+Multi-Bank Detection Engine
+PDF Transaction Storage
+Manual Transaction Entry
+Subscription Analysis
+Trend Analysis
+Connect finsarth.com
+Premium Homepage Redesign
+
 Stage 2 - Project Setup
 ---
 # Next Task
