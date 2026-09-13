@@ -87,7 +87,7 @@ Tasks:
 - ✅ CSV Upload UI Created
 - ✅ CSV File Reading Working
 - ✅ CSV Preview Working
-- ⬜ CSV Parsing
+- ✅ CSV Parsing
 - ⬜ Statement Upload
 - ⬜ Manual Transaction Entry
 - ⬜ Transaction Storage
