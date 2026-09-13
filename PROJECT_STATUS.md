@@ -83,7 +83,7 @@ Users can manage financial accounts.
 Status:
 🟡 In Progress
 Tasks:
-- ✅ Transactions Table Created
+- ✅ Transactions Table/Columns Created
 - ✅ CSV Upload UI Created
 - ✅ CSV File Reading Working
 - ✅ CSV Preview Working
