@@ -11,7 +11,7 @@ This file should be updated after every major milestone.
 # Current Project Phase
 Phase 1
 Status:
-In Progress
+🟡 In Progress (60%)
 ---
 # Overall Progress
 - Documentation: ✅ Completed,
@@ -51,7 +51,7 @@ Tasks:
 - ✅ Supabase Package Installed
 - ✅ Supabase Client Created
 - ✅ Next.js Running
-- ⬜ Setup Vercel
+- ✅ Setup Vercel
 - ✅ Run Project Locally
 Success Criteria:
 Application runs successfully.
@@ -60,16 +60,18 @@ Application runs successfully.
 Status:
 ✅ Completed
 Tasks:
-- ✅ Signup Page UI Created 
-- ✅ Login Page UI Created
-- ✅ User Authentication
+- ✅ Signup Working
+- ✅ Login Working
+- ✅ Dashboard Redirect After Login
+- ✅ Email Verification Working
 - ⬜ Logout Functionality
+
 Success Criteria:
 Users can create accounts and log in.
 ---
 ## Stage 4 - Account Management
 Status:
-⬜ Pending
+🟡 In Progress
 Tasks:
 - Add Bank Accounts
 - Add Credit Card
@@ -79,12 +81,14 @@ Users can manage financial accounts.
 ---
 ## Stage 5 - Transaction Engine
 Status:
-⬜ Pending
+🟡 In Progress
 Tasks:
-- CSV Upload
-- Statement Upload
-- Manual Transaction Entry
-- Transaction Storage
+- ✅ Transactions Table Created
+- ⬜ CSV Upload
+- ⬜ Statement Upload
+- ⬜ Manual Transaction Entry
+- ⬜ Transaction Storage
+
 Success Criteria:
 Transactions are stored correctly.
 ---
