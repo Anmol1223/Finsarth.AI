@@ -11,7 +11,7 @@ This file should be updated after every major milestone.
 # Current Project Phase
 Phase 1
 Status:
-🟡 In Progress (80%)
+🟡 In Progress (84%)
 ---
 # Overall Progress
 - Documentation: ✅ Completed,
@@ -98,10 +98,12 @@ Transactions are stored correctly.
 ---
 ## Stage 6 - Categorization
 Status:
-⬜ Pending
+🟡 In Progress
 Tasks:
-- Automatic Categorization
-- Category Editing
+- ✅ Basic Auto Categorization
+- ⬜ Advanced Categorization
+- ⬜ Category Analysis
+
 Success Criteria:
 Transactions are categorized accurately.
 ---
