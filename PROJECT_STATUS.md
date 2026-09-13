@@ -11,7 +11,7 @@ This file should be updated after every major milestone.
 # Current Project Phase
 Phase 1
 Status:
-🟡 In Progress (75%)
+🟡 In Progress (80%)
 ---
 # Overall Progress
 - Documentation: ✅ Completed,
@@ -88,8 +88,9 @@ Tasks:
 - ✅ CSV File Reading Working
 - ✅ CSV Preview Working
 - ✅ CSV Parsing
+- ✅ Transactions View
 - ✅Transaction Storage
-- ✅ Statement Upload
+- ⬜ Statement Upload
 - ⬜ Manual Transaction Entry
 
 Success Criteria:
