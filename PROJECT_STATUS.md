@@ -69,7 +69,7 @@ Tasks:
 Success Criteria:
 Users can create accounts and log in.
 ---
-## Stage 4 - Account Management
+## Stage 4 - Account Management {NOTE: for PHASE II & III)
 Status:
 🟡 In Progress
 Tasks:
