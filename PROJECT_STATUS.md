@@ -11,7 +11,7 @@ This file should be updated after every major milestone.
 # Current Project Phase
 Phase 1
 Status:
-🟡 In Progress (84%)
+🟡 In Progress (86%)
 ---
 # Overall Progress
 - Documentation: ✅ Completed,
@@ -113,8 +113,10 @@ Status:
 Tasks:
 - ✅ Dashboard UI Created
 - ✅ Real KPI Data
+- ✅ Top Category KPI
 - ⬜ Spending Charts
 - ⬜ Category Analysis
+   
 Success Criteria:
 Users understand spending patterns quickly.
 ---
