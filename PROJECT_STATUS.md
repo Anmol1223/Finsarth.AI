@@ -11,7 +11,7 @@ This file should be updated after every major milestone.
 # Current Project Phase
 Phase 1
 Status:
-🟡 In Progress (60%)
+🟡 In Progress (62%)
 ---
 # Overall Progress
 - Documentation: ✅ Completed,
@@ -64,7 +64,7 @@ Tasks:
 - ✅ Login Working
 - ✅ Dashboard Redirect After Login
 - ✅ Email Verification Working
-- ⬜ Logout Functionality
+- ✅ Logout Functionality
 
 Success Criteria:
 Users can create accounts and log in.
