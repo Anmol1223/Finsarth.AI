@@ -11,7 +11,7 @@ This file should be updated after every major milestone.
 # Current Project Phase
 Phase 1
 Status:
-🟡 In Progress (92%)
+🟡 In Progress (78%)
 ---
 # Overall Progress
 - Documentation: ✅ Completed,
