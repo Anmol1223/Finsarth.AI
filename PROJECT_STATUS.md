@@ -71,7 +71,7 @@ Users can create accounts and log in.
 ---
 ## Stage 4 - Account Management {NOTE: for PHASE II & III)
 Status:
-🟡 In Progress
+🟡 In Progress (for phase I only statements)
 Tasks:
 - Add Bank Accounts
 - Add Credit Card
@@ -94,11 +94,11 @@ Tasks:
 - ✅ Transaction Storage
 - ✅ Transactions View
 - ✅ Bank Statement Data Model Ready
-- 🟡 PDF Statement Upload UI Created
-- 🟡 Multi-Bank PDF Engine Started
-- ⬜ PDF Statement Extraction
-- ⬜ PDF Transaction Storage
-- ⬜ Statement Upload
+- ✅ PDF Statement Upload UI Created
+- ✅ Multi-Bank PDF Engine Started
+- ✅ PDF Statement Extraction
+- ✅ PDF Transaction Storage
+- ✅ Statement Upload
 - ⬜ Manual Transaction Entry
   
 Success Criteria:
@@ -109,8 +109,9 @@ Status:
 🟡 In Progress
 Tasks:
 - ✅ Basic Auto Categorization
-- ⬜ Advanced Categorization
-- ⬜ Category Analysis
+- ✅ Advanced Categorization
+- ✅ Category Analysis
+- ✅ Merchant Identification
 
 Success Criteria:
 Transactions are categorized accurately.
@@ -123,7 +124,7 @@ Tasks:
 - ✅ Real KPI Data
 - ✅ Top Category KPI
 - ✅ Spending Charts
-- ✅ Category Analysis
+- ⬜ Fintech Advanced version UI
    
 Success Criteria:
 Users understand spending patterns quickly.
