@@ -46,10 +46,19 @@ const COLORS = [
   }, []);
 
   async function fetchDashboardData() {
+    const {
+  data: { user },
+} = await supabase.auth.getUser();
+
+if (!user) {
+  router.push("/login");
+  return;
+}
   try {
     const { data, error } = await supabase
-      .from("transactions")
-      .select("*");
+  .from("transactions")
+  .select("*")
+  .eq("user_id", user.id);
 
     console.log("DATA =", data);
     console.log("ERROR =", error);
@@ -57,7 +66,21 @@ const COLORS = [
     if (error || !data) {
       return;
     }
+    if (data.length === 0) {
+  setTransactionCount(0);
+  setMonthlySpending(0);
+  setTotalCredits(0);
+  setTotalDebits(0);
+  setCurrentBalance(0);
+  setTopCategory("No Data");
 
+  setAiInsight(
+    "Upload your first bank statement to generate AI-powered insights."
+  );
+
+  setLoading(false);
+  return;
+}
     setTransactionCount(data.length);
 
     const credits = data.reduce(

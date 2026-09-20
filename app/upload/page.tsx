@@ -1,23 +1,38 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { supabase } from "../../lib/supabase";
 
 export default function UploadPage() {
+  const router = useRouter();
   const [rows, setRows] = useState<string[][]>([]);
   async function saveTransactions() {
   if (rows.length <= 1) return;
 
+ const {
+  data: { user },
+} = await supabase.auth.getUser();
+
+if (!user) {
+  alert("Please login again.");
+  return;
+}
   const transactions = rows.slice(1).map((row) => ({
+  user_id: user.id,
+
   date: row[0],
   description: row[1],
   deposit: Number(row[2] || 0),
   withdrawal: Number(row[3] || 0),
   balance: Number(row[4] || 0),
+
   merchant: row[1],
+
   amount:
     Number(row[2] || 0) +
     Number(row[3] || 0),
+
   category: "Other",
 }));
 
@@ -26,10 +41,10 @@ export default function UploadPage() {
     .insert(transactions);
 
   if (error) {
-    alert(error.message);
-  } else {
-    alert("Transactions saved successfully!");
-  }
+  alert(error.message);
+} else {
+  router.push("/dashboard");
+}
 }
 
   function handleFile(event: React.ChangeEvent<HTMLInputElement>) {
