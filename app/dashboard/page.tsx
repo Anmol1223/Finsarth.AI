@@ -21,8 +21,22 @@ export default function DashboardPage() {
 const [totalDebits, setTotalDebits] =
   useState(0);
 
+  const [avgSpend, setAvgSpend] = useState(0);
+
+const [netSavings, setNetSavings] = useState(0);
+
+const [spendingRatio, setSpendingRatio] =
+  useState(0);
+
+const [savingsRate, setSavingsRate] =
+  useState(0);
+
+
 const [currentBalance, setCurrentBalance] =
   useState(0);
+
+  const [selectedView, setSelectedView] =
+  useState("Expense");
 
   const [transactionCount, setTransactionCount] = useState(0);
   const [topCategory, setTopCategory] = useState("N/A");
@@ -94,6 +108,28 @@ if (!user) {
         sum + Number(tx.withdrawal || 0),
       0
     );
+    const avg =
+  data.length > 0
+    ? debits / data.length
+    : 0;
+
+const savings =
+  credits - debits;
+
+const spendRatio =
+  credits > 0
+    ? (debits / credits) * 100
+    : 0;
+
+const saveRate =
+  credits > 0
+    ? (savings / credits) * 100
+    : 0;
+
+setAvgSpend(avg);
+setNetSavings(savings);
+setSpendingRatio(spendRatio);
+setSavingsRate(saveRate);
 
     setTotalCredits(credits);
     setTotalDebits(debits);
@@ -111,13 +147,15 @@ if (!user) {
 
     const categories: Record<string, number> = {};
 
-    data.forEach((tx) => {
-      const category =
-        tx.category || "Other";
+   data.forEach((tx) => {
+  const category =
+    tx.category || "Other";
 
-      categories[category] =
-        (categories[category] || 0) + 1;
-    });
+  if (Number(tx.withdrawal || 0) > 0) {
+    categories[category] =
+      (categories[category] || 0) + 1;
+  }
+});
 
     const top =
       Object.keys(categories).length > 0
@@ -147,19 +185,45 @@ if (!user) {
     });
 
     const chartData = Object.entries(
-      categoryTotals
-    ).map(([name, value]) => ({
-      name,
-      value,
-    }));
+  categoryTotals
+)
+.filter(([, value]) => value > 0)
+.map(([name, value]) => ({
+  name,
+  value,
+}));
 
     setCategoryData(chartData);
 
-    setAiInsight(
-      "Top spending category: " +
-        top +
-        ". Review this category for savings opportunities."
-    );
+   const avgSpend =
+  data.length > 0
+    ? debits / data.length
+    : 0;
+
+
+let insight = `
+You spent ₹${debits.toLocaleString()} across ${data.length} transactions.
+
+Average transaction value: ₹${avgSpend.toFixed(2)}.
+
+Total income: ₹${credits.toLocaleString()}.
+
+Current balance: ₹${latestTx?.balance || 0}.
+
+Top spending category: ${top}.
+`;
+
+if (savings > 0) {
+  insight += `
+You saved ₹${savings.toLocaleString()} during this period.
+`;
+} else {
+  insight += `
+Your spending exceeded your income by ₹${Math.abs(savings).toLocaleString()}.
+`;
+}
+
+setAiInsight(insight);
   } catch (err) {
     console.error(
       "Dashboard Error:",
@@ -192,6 +256,87 @@ if (!user) {
         </button>
       </div>
 
+       <div
+  className="
+  mt-8
+  rounded-3xl
+  border
+  border-cyan-500/20
+  bg-gradient-to-br
+  from-slate-900
+  to-slate-950
+  p-10
+"
+>
+
+  <h2 className="text-4xl font-bold text-cyan-400 mb-8">
+    AI Financial Copilot
+  </h2>
+
+  <div className="grid gap-6 md:grid-cols-2">
+
+  
+    <div className="rounded-2xl bg-slate-950/50 p-6">
+      <p className="text-slate-400">
+        Net Savings
+      </p>
+
+      <h3 className="mt-2 text-3xl font-bold text-cyan-400">
+        ₹{netSavings.toLocaleString()}
+      </h3>
+    </div>
+
+    <div className="rounded-2xl bg-slate-950/50 p-6">
+      <p className="text-slate-400">
+        Savings Rate
+      </p>
+
+      <h3 className="mt-2 text-3xl font-bold text-purple-400">
+        {savingsRate.toFixed(1)}%
+      </h3>
+    </div>
+
+  </div>
+
+  <div className="mt-8 rounded-2xl bg-slate-950/50 p-8">
+
+    <h3 className="text-xl font-bold mb-4">
+      AI Recommendation
+    </h3>
+
+    <ul className="space-y-3 text-slate-300">
+
+      <li>
+        • Average spending per transaction:
+        ₹{avgSpend.toFixed(2)}
+      </li>
+
+      <li>
+        • Spending ratio:
+        {spendingRatio.toFixed(1)}%
+      </li>
+
+      <li>
+        • Current balance:
+        ₹{currentBalance.toLocaleString()}
+      </li>
+
+      <li>
+        • Top spending category:
+        {topCategory}
+      </li>
+
+      <li>
+        • Recommendation:
+        Reduce monthly expenses by 5-10%
+        to improve savings rate.
+      </li>
+
+    </ul>
+
+  </div>
+
+</div>
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
 
   <div
@@ -218,7 +363,13 @@ if (!user) {
       {loading ? (
   <div className="h-10 w-36 animate-pulse rounded bg-slate-800" />
 ) : (
-  `₹${monthlySpending.toLocaleString()}`
+  `₹${monthlySpending.toLocaleString(
+  undefined,
+  {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }
+)}`
 )}
     </h2>
 
@@ -316,7 +467,13 @@ if (!user) {
       {loading ? (
   <div className="h-10 w-24 animate-pulse rounded bg-slate-800" />
 ) : (
-  totalCredits
+  `₹${totalCredits.toLocaleString(
+    undefined,
+  {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }
+)}`
 )}
     </h2>
 
@@ -348,7 +505,13 @@ if (!user) {
      {loading ? (
   <div className="h-10 w-24 animate-pulse rounded bg-slate-800" />
 ) : (
-  totalDebits
+  `₹${totalDebits.toLocaleString(
+    undefined,
+  {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }
+  )}`
   )}
     </h2>
 
@@ -380,7 +543,13 @@ if (!user) {
       {loading ? (
   <div className="h-10 w-24 animate-pulse rounded bg-slate-800" />
 ) : (
-  currentBalance
+  `₹${currentBalance.toLocaleString(
+    undefined,
+    {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }
+  )}`
 )}
     </h2>
 
@@ -427,7 +596,13 @@ if (!user) {
           </span>
 
           <span className="text-cyan-400 font-bold">
-            ₹{item.value.toLocaleString()}
+₹{item.value.toLocaleString(
+  undefined,
+  {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }
+)}
           </span>
         </div>
       ))}
@@ -439,47 +614,107 @@ if (!user) {
         height: 320,
       }}
     >
-      <ResponsiveContainer>
-        <PieChart>
-          <Pie
-            data={chartData}
-            dataKey="value"
-            outerRadius={120}
-            label
-          >
-            {chartData.map(
-              (entry, index) => (
-                <Cell
-                  key={index}
-                  fill={
-                    COLORS[
-                      index %
-                        COLORS.length
-                    ]
-                  }
-                />
-              )
-            )}
-          </Pie>
+      <div className="mb-6 flex items-center justify-between">
 
-          <Tooltip />
-        </PieChart>
-      </ResponsiveContainer>
+  <h2 className="text-3xl font-bold">
+    Financial Analysis
+  </h2>
+
+  <select
+    value={selectedView}
+    onChange={(e) =>
+      setSelectedView(e.target.value)
+    }
+    className="
+      rounded-xl
+      border
+      border-slate-700
+      bg-slate-900
+      px-4
+      py-2
+      text-white
+    "
+  >
+    <option value="Expense">Expense</option>
+    <option value="Credit">Credit</option>
+    <option value="Savings">Savings</option>
+    <option value="Balance">Balance</option>
+  </select>
+
+</div>
+
+<div className="mb-6 rounded-2xl border border-slate-800 p-6">
+
+  <p className="text-slate-400">
+    {selectedView}
+  </p>
+
+  <h2 className="mt-2 text-4xl font-bold text-cyan-400">
+
+    {selectedView === "Expense"
+      ? `₹${totalDebits.toLocaleString()}`
+      : selectedView === "Credit"
+      ? `₹${totalCredits.toLocaleString()}`
+      : selectedView === "Savings"
+      ? `₹${netSavings.toLocaleString()}`
+      : `₹${currentBalance.toLocaleString()}`}
+
+  </h2>
+
+</div>
+      
+      <div className="grid gap-4 md:grid-cols-2">
+
+  <div className="rounded-2xl border border-slate-800 bg-slate-950/50 p-5">
+    <p className="text-sm text-slate-400">
+      Average Transaction
+    </p>
+
+    <h3 className="mt-2 text-3xl font-bold text-cyan-400">
+      ₹ {avgSpend.toLocaleString(undefined,{
+        minimumFractionDigits:2,
+        maximumFractionDigits:2
+      })}
+    </h3>
+  </div>
+
+  <div className="rounded-2xl border border-slate-800 bg-slate-950/50 p-5">
+    <p className="text-sm text-slate-400">
+      Net Savings
+    </p>
+
+    <h3 className="mt-2 text-3xl font-bold text-green-400">
+      ₹ {netSavings.toLocaleString()}
+    </h3>
+  </div>
+
+  <div className="rounded-2xl border border-slate-800 bg-slate-950/50 p-5">
+    <p className="text-sm text-slate-400">
+      Spending Ratio
+    </p>
+
+    <h3 className="mt-2 text-3xl font-bold text-orange-400">
+      {spendingRatio.toFixed(1)}%
+    </h3>
+  </div>
+
+  <div className="rounded-2xl border border-slate-800 bg-slate-950/50 p-5">
+    <p className="text-sm text-slate-400">
+      Savings Rate
+    </p>
+
+    <h3 className="mt-2 text-3xl font-bold text-purple-400">
+      {savingsRate.toFixed(1)}%
+    </h3>
+  </div>
+
+</div>
     </div>
 
   </div>
 </div>
 
-      <div className="mt-8 rounded-2xl border border-slate-800 bg-slate-900 p-6">
-        <h2 className="mb-3 text-2xl font-bold">
-          AI Insight
-        </h2>
-
-        <p className="text-slate-400">
-          {aiInsight}
-        </p>
-      </div>
-
+    
     </main>
   );
 }
